@@ -44,7 +44,7 @@ public class otp_page extends AppCompatActivity {
         pinView = findViewById(R.id.pinid);
         mAuth = FirebaseAuth.getInstance();
         phoneNo = getIntent().getStringExtra("ph");
-        //sendVerificationCode(phoneNo);
+        sendVerificationCode(phoneNo);
         findViewById(R.id.button2).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,7 +56,7 @@ public class otp_page extends AppCompatActivity {
                     return;
                 }
                 Toast.makeText(otp_page.this,code,Toast.LENGTH_SHORT).show();
-                //verifyCode(code);
+                verifyCode(code);
                 store_in_db();
             }
         });
